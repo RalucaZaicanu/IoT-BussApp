@@ -1,0 +1,2218 @@
+[
+    {
+        "id": "87cf86ceec82f61d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e9b8cfe70944e6f3",
+        "type": "mssqldatabase",
+        "host": "traffic_mobility.database.windows.net",
+        "db": "Traffic_mobility"
+    },
+    {
+        "id": "135baf2f34febef4",
+        "type": "MSSQL-CN",
+        "name": "Traffic_mobility",
+        "server": "traffic-mobility.database.windows.net",
+        "encyption": true,
+        "database": "Traffic_mobility"
+    },
+    {
+        "id": "de0bb43c3573c565",
+        "type": "ui_tab",
+        "name": "MyLocation",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "80366afc77a7837f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "685193e2061d194e",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "de0bb43c3573c565",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bf70c593a7849446",
+        "type": "ui_tab",
+        "name": "chart",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ce0f61c7fd222874",
+        "type": "ui_group",
+        "name": "Map",
+        "tab": "bf70c593a7849446",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b1699aa705c4129f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": true,
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true
+    },
+    {
+        "id": "9b45f80898db3ff3",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "32826a64af7ca893",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "b1699aa705c4129f",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "9b45f80898db3ff3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "bc475ea6923beaf0",
+        "type": "twilio-api",
+        "name": "mytwilio",
+        "sid": "",
+        "from": ""
+    },
+    {
+        "id": "e54e941130a6edce",
+        "type": "ui-group",
+        "name": "PieChart",
+        "page": "32826a64af7ca893",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "31ddd262b03490c6",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "df3ae043da24b166",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "422a6a28ad215b2f",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "df3ae043da24b166",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "071ad0f2aef38a14",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "Vechicles",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.tranzy.ai/v1/opendata/vehicles",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Accept",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "OZs32pMqbhukb0iziTSe9LnxvotNaX48G5IwmLCq"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-Agency-Id",
+                "valueType": "other",
+                "valueValue": "2"
+            }
+        ],
+        "x": 380,
+        "y": 420,
+        "wires": [
+            [
+                "16d24a7fedc0f34d",
+                "480e1c69600fa931"
+            ]
+        ]
+    },
+    {
+        "id": "207434318be93f33",
+        "type": "inject",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "071ad0f2aef38a14",
+                "ee738db8be68bb2a",
+                "98512178dfc7e811"
+            ]
+        ]
+    },
+    {
+        "id": "480e1c69600fa931",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 1",
+        "func": "// Parse the payload if it is a string\nif (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields\n    let filteredData = msg.payload\n        .filter(item => item.latitude && item.longitude && item.route_id) // Remove invalid entries\n        .map(item => ({\n            route_id: item.route_id,         // Bus number\n            latitude: item.latitude,        // Latitude\n            longitude: item.longitude       // Longitude\n        }));\n    \n    // Assign the route_id of the first valid item (or dynamically handle all items)\n    if (filteredData.length > 0) {\n        msg.route_id = filteredData[0].route_id; // Assign route_id to the message\n    } else {\n        msg.route_id = undefined; // Handle cases where no valid data exists\n    }\n\n    // Assign the filtered data as the new payload\n    msg.payload = filteredData;\n    msg.parts = {\n    id: \"unique_group_id\", // Use the same ID for all related messages\n    index: flow.get(\"message_index\") || 0, // Use a unique index for each message\n    count: 2 // Total number of messages expected in the group\n};\nflow.set(\"message_index\", (flow.get(\"message_index\") || 0) + 1);\n\nreturn msg;\n\n    // Create a single-line debug message\n    let debugMessage = filteredData\n        .map(item => `Route id: ${item.route_id}\\n Latitude: ${item.latitude}\\n Longitude: ${item.longitude}\\n\\n`)\n        .join(\" \"); // Use a semicolon as a separator for better readability\n\n    // Log the filtered data\n    node.warn(`Filtered Data:\\n ${debugMessage}`);\n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 420,
+        "wires": [
+            [
+                "e00972eaf0678c3b",
+                "75bcdb3c8ff3ea15"
+            ]
+        ]
+    },
+    {
+        "id": "ee738db8be68bb2a",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "Routes",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.tranzy.ai/v1/opendata/routes",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Accept",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "OZs32pMqbhukb0iziTSe9LnxvotNaX48G5IwmLCq"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-Agency-Id",
+                "valueType": "other",
+                "valueValue": "2"
+            }
+        ],
+        "x": 400,
+        "y": 580,
+        "wires": [
+            [
+                "ad3c48fc0cc74023",
+                "14a5d8785b052177"
+            ]
+        ]
+    },
+    {
+        "id": "ad3c48fc0cc74023",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 5",
+        "func": "// Parse the payload if it is a string\nif (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields\n    let filteredData = msg.payload\n        .filter(item => item.route_short_name && item.route_id) // Remove invalid entries\n        .map(item => ({\n            route_short_name: item.route_short_name, // Bus number\n            route_id: item.route_id                 // Route ID\n        }));\n    \n    // Assign the route_id of the first valid item (or dynamically handle all items)\n    if (filteredData.length > 0) {\n        msg.route_id = filteredData[0].route_id; // Assign route_id to the message\n    } else {\n        msg.route_id = undefined; // Handle cases where no valid data exists\n    }\n\n    // Assign the filtered data as the new payload\n    msg.payload = filteredData;\n    msg.parts = {\n    id: \"unique_group_id\", // Use the same ID for all related messages\n    index: flow.get(\"message_index\") || 0, // Use a unique index for each message\n    count: 2 // Total number of messages expected in the group\n};\nflow.set(\"message_index\", (flow.get(\"message_index\") || 0) + 1);\n\nreturn msg;\n\n    // Create a single-line debug message\n    let debugMessage = filteredData\n        .map(item => `Bus Number: ${item.route_short_name}\\nRoute ID: ${item.route_id}\\n\\n`)\n        .join(\"\"); // Join the debug messages\n\n    // Log the filtered data\n    node.warn(`Filtered Data:\\n${debugMessage}`);\n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "9a0c6b52b2b63e1a",
+                "e00972eaf0678c3b"
+            ]
+        ]
+    },
+    {
+        "id": "5d977483eb26c873",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "45",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://ctpcj.ro/orare/csv/orar_45_lv.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "accept",
+                "valueType": "other",
+                "valueValue": "*/*"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "accept-language",
+                "valueType": "other",
+                "valueValue": "en-US,en;q=0.9,ro;q=0.8"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "cookie",
+                "valueType": "other",
+                "valueValue": "_ga=GA1.1.1619507373.1733415403; _ga_V4YDWT84EJ=GS1.1.1733415402.1.1.1733415413.0.0.0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "priority",
+                "valueType": "other",
+                "valueValue": "u=1, i"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "referer",
+                "valueType": "other",
+                "valueValue": "https://ctpcj.ro/index.php/ro/orare-linii/linii-urbane/linia-45"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua",
+                "valueType": "other",
+                "valueValue": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-mobile",
+                "valueType": "other",
+                "valueValue": "?0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-platform",
+                "valueType": "other",
+                "valueValue": "\"Windows\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-dest",
+                "valueType": "other",
+                "valueValue": "empty"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-mode",
+                "valueType": "other",
+                "valueValue": "cors"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-site",
+                "valueType": "other",
+                "valueValue": "same-origin"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "user-agent",
+                "valueType": "other",
+                "valueValue": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "x-requested-with",
+                "valueType": "other",
+                "valueValue": "XMLHttpRequest"
+            }
+        ],
+        "x": 570,
+        "y": 1240,
+        "wires": [
+            [
+                "0129663170b665e8"
+            ]
+        ]
+    },
+    {
+        "id": "9a0c6b52b2b63e1a",
+        "type": "file",
+        "z": "87cf86ceec82f61d",
+        "name": "file2",
+        "filename": "C:\\Users\\raluc\\Downloads\\IoT_project/Routes.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 770,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22988cb3fd1c6c3d",
+        "type": "debug",
+        "z": "87cf86ceec82f61d",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2620,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "700c9bc0fab21499",
+        "type": "azureiothub-ot",
+        "z": "87cf86ceec82f61d",
+        "name": "Azure IoT Hub",
+        "protocol": "mqtt",
+        "x": 2060,
+        "y": 1200,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "16d24a7fedc0f34d",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 14",
+        "func": "// Parse the payload if it is a string\nif (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields (route_id, latitude, longitude)\n    const filteredData = msg.payload\n        // .filter(item => item.latitude && item.longitude && item.route_id) // Remove invalid entries\n        .map(item => ({\n            route_id: item.route_id,         // Bus number\n            latitude: item.latitude,         // Latitude\n            longitude: item.longitude        // Longitude\n        }));\n    \n    // Set the filtered data (route_id, latitude, longitude) as the new payload\n  \n    msg.payload = {\n        \"deviceId\":\"Traffic_mob\",\n        \"key\":\"26dZAO+EeINMGBGh80ZyNGE8Fn4YRLsLrR5vyID/s3U=\",\n        \"protocol\":\"mqtt\",\n        \"data\": filteredData,\n    }\n    return msg;\n    \n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14a5d8785b052177",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 15",
+        "func": "// Parse the payload if it is a string\nif (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields (route_id, latitude, longitude)\n    \n         const filteredData = msg.payload\n        .filter(item => item.route_short_name && item.route_id) // Remove invalid entries\n        .map(item => ({\n            route_short_name: item.route_short_name,         // Bus number\n            route_id: item.route_id,   // Latitude\n        }));\n    \n    // Set the filtered data (route_id, latitude, longitude) as the new payload\n  \n    msg.payload = {\n       \"deviceId\":\"Traffic_mob\",\n        \"key\":\"26dZAO+EeINMGBGh80ZyNGE8Fn4YRLsLrR5vyID/s3U=\",\n        \"protocol\":\"mqtt\",\n        \"data\": filteredData,\n    }\n    return msg;\n    \n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e24e8aea99f91c68",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 17",
+        "func": "// Parse the payload if it is a string\nif (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields (route_id, latitude, longitude)\n    const filteredData = msg.payload\n        // .filter(item => item.latitude && item.longitude && item.route_id) // Remove invalid entries\n        .map(item => ({\n            stop_name: item.stop_name,         \n            stop_lat: item.stop_lat,   \n            stop_lon: item.stop_lon \n        }));\n    \n    // Set the filtered data (route_id, latitude, longitude) as the new payload\n  \n    msg.payload = {\n        \"deviceId\":\"Traffic_mob\",\n        \"key\":\"26dZAO+EeINMGBGh80ZyNGE8Fn4YRLsLrR5vyID/s3U=\",\n        \"protocol\":\"mqtt\",\n        \"data\": filteredData,\n    }\n    return msg;\n    \n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1830,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2579f585d1b4dcf",
+        "type": "azureiothub-ot",
+        "z": "87cf86ceec82f61d",
+        "name": "Azure IoT Hub",
+        "protocol": "mqtt",
+        "x": 800,
+        "y": 660,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f7496471a377c17c",
+        "type": "debug",
+        "z": "87cf86ceec82f61d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1740,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e00972eaf0678c3b",
+        "type": "join",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "route_id",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1430,
+        "y": 460,
+        "wires": [
+            [
+                "dfb2c9689eea4b8d"
+            ]
+        ]
+    },
+    {
+        "id": "dfb2c9689eea4b8d",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 22",
+        "func": "\n\n// Check if msg.payload is an object with keys containing arrays\nif (typeof msg.payload === \"object\" && !Array.isArray(msg.payload)) {\n    // Flatten the structure into a single array\n    let flattenedData = [];\n    for (let key in msg.payload) {\n        if (Array.isArray(msg.payload[key])) {\n            flattenedData = flattenedData.concat(msg.payload[key]);\n        }\n    }\n    msg.payload = flattenedData; // Replace payload with flattened data\n}\n\n// Ensure msg.payload is now an array\nif (!Array.isArray(msg.payload)) {\n    node.error(\"Payload is not an array even after flattening: \" + JSON.stringify(msg.payload, null, 2));\n    return null; // Early return, but msg.topic is already set\n}\n\n// Create an empty object to group data by route_id\nlet groupedData = {};\n\n// Iterate over each object in the array\nmsg.payload.forEach(item => {\n    // Ensure the item has a route_id\n    if (!item.route_id) {\n        node.warn(\"Item missing route_id: \" + JSON.stringify(item));\n        return;\n    }\n\n    // If the route_id doesn't exist in groupedData, initialize it\n    if (!groupedData[item.route_id]) {\n        groupedData[item.route_id] = {}; // Start with an empty object\n    }\n\n    // Merge the current item's fields into the route_id group\n    groupedData[item.route_id] = { ...groupedData[item.route_id], ...item };\n});\n\n// Set the grouped data as the new payload\nmsg.payload = groupedData;\n\nnode.warn(\"Grouped Data: \" + JSON.stringify(groupedData, null, 2));\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1610,
+        "y": 460,
+        "wires": [
+            [
+                "f7496471a377c17c",
+                "bf28382b0923d443"
+            ]
+        ]
+    },
+    {
+        "id": "98512178dfc7e811",
+        "type": "ui_template",
+        "z": "87cf86ceec82f61d",
+        "group": "685193e2061d194e",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n  <h3>Fetching Location...</h3>\n</div>\n<script>\n  (function(scope) {\n    // Function to fetch and send the location\n    function sendLocationOnce() {\n      if (navigator.geolocation) {\n        console.log(\"Geolocation is supported. Fetching location...\");\n        \n        // Fetch location once\n        navigator.geolocation.getCurrentPosition(\n          (position) => {\n            const latitude = position.coords.latitude;\n            const longitude = position.coords.longitude;\n\n            // Display location on the dashboard\n            document.querySelector(\"h3\").innerText =\n              \"Latitude: \" + latitude + \", Longitude: \" + longitude;\n\n            console.log(\"Location fetched:\", latitude, longitude);\n\n            // Send data back to Node-RED only once\n            scope.send({\n              payload: {\n                latitude: latitude,\n                longitude: longitude,\n              },\n            });\n\n            console.log(\"Data sent to Node-RED\");\n          },\n          (error) => {\n            // Handle geolocation errors\n            document.querySelector(\"h3\").innerText =\n              \"Error fetching location: \" + error.message;\n            console.error(\"Geolocation error:\", error);\n          }\n        );\n      } else {\n        // Handle case where geolocation is not supported\n        document.querySelector(\"h3\").innerText =\n          \"Geolocation is not supported by this browser.\";\n        console.error(\"Geolocation not supported by the browser.\");\n      }\n    }\n\n    // Call the function immediately to send location once\n    sendLocationOnce();\n    \n    \n\n\n    // Optional: Handle messages from Node-RED (if needed)\n    scope.$watch(\"msg\", (msg) => {\n      console.log(\"Message from Node-RED:\", msg);\n    });\n  })(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 480,
+        "wires": [
+            [
+                "31bcf7b84efd7dc5"
+            ]
+        ]
+    },
+    {
+        "id": "bf28382b0923d443",
+        "type": "join",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "payload",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1510,
+        "y": 580,
+        "wires": [
+            [
+                "4bbc9876b8e1af19"
+            ]
+        ]
+    },
+    {
+        "id": "a28a5d9c308e6806",
+        "type": "debug",
+        "z": "87cf86ceec82f61d",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2000,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "31bcf7b84efd7dc5",
+        "type": "delay",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1080,
+        "y": 480,
+        "wires": [
+            [
+                "bf28382b0923d443"
+            ]
+        ]
+    },
+    {
+        "id": "4bbc9876b8e1af19",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 23",
+        "func": "// Haversine formula to calculate the distance between two points\nfunction haversineDistance(lat1, lon1, lat2, lon2) {\n    const R = 6371; // Radius of the Earth in km\n    const dLat = (lat2 - lat1) * Math.PI / 180;\n    const dLon = (lon2 - lon1) * Math.PI / 180;\n    const a = \n        Math.sin(dLat / 2) * Math.sin(dLat / 2) +\n        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *\n        Math.sin(dLon / 2) * Math.sin(dLon / 2);\n    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n    return R * c; // Distance in km\n}\n\n// Extract bus data and predefined locations\nconst buses = msg.payload[0]; // First object: list of buses\nconst myLocation = msg.payload[1]; // Second object: my location\n\nconst myLat = myLocation.latitude;\nconst myLon = myLocation.longitude;\n\n// Reference points for predefined areas\nconst locations = {\n    center: { latitude: 46.768889, longitude: 23.588694 },  // Center area\n    iuliusMall: { latitude: 46.770944, longitude: 23.627111 }, // Iulius Mall\n    vivo: { latitude: 46.750083, longitude: 23.531472 } // Vivo\n};\n\n// Initialize counters\nlet busesInArea = 0;\nlet busesInCenter = 0;\nlet busesInIuliusMall = 0;\nlet busesInVivo = 0;\n\n// Iterate over each bus\nfor (let key in buses) {\n    const bus = buses[key];\n    const busLat = bus.latitude;\n    const busLon = bus.longitude;\n\n    // Calculate distances to predefined locations\n    const distanceToCenter = haversineDistance(locations.center.latitude, locations.center.longitude, busLat, busLon);\n    const distanceToIuliusMall = haversineDistance(locations.iuliusMall.latitude, locations.iuliusMall.longitude, busLat, busLon);\n    const distanceToVivo = haversineDistance(locations.vivo.latitude, locations.vivo.longitude, busLat, busLon);\n    const distanceToUser = haversineDistance(myLat, myLon, busLat, busLon);\n    if (distanceToUser <= 2) { // Changed radius to 2 km\n        busesInArea++;\n    }\n    // Increment counters if the bus is within 2 km\n    if (distanceToCenter <= 2) busesInCenter++;\n    if (distanceToIuliusMall <= 2) busesInIuliusMall++;\n    if (distanceToVivo <= 2) busesInVivo++;\n}\n\n// Total buses\nconst totalBuses = Object.keys(buses).length;\n\n// Calculate buses in other areas\nconst busesInOtherAreas = totalBuses - (busesInCenter + busesInIuliusMall + busesInVivo);\n\n// Prepare data for pie chart\nmsg.payload = [\n    { year:2025, label: \"Center\", value: busesInCenter },\n    { year:2025, label: \"Iulius Mall\", value: busesInIuliusMall },\n    { year:2025, label: \"Vivo\", value: busesInVivo },\n    { year: 2025, label: \"MyLocation\", value: busesInArea },\n    { year:2025, label: \"Other Areas\", value: busesInOtherAreas }\n];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1730,
+        "y": 580,
+        "wires": [
+            [
+                "a28a5d9c308e6806",
+                "718b0f8a6b08171d"
+            ]
+        ]
+    },
+    {
+        "id": "718b0f8a6b08171d",
+        "type": "ui-chart",
+        "z": "87cf86ceec82f61d",
+        "group": "e54e941130a6edce",
+        "name": "Piechart",
+        "label": "chart",
+        "order": 1,
+        "chartType": "pie",
+        "category": "year",
+        "categoryType": "property",
+        "xAxisLabel": "",
+        "xAxisProperty": "label",
+        "xAxisPropertyType": "property",
+        "xAxisType": "radial",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "value",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 2000,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e99d55eb7484d8f7",
+        "type": "inject",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 370,
+        "y": 1240,
+        "wires": [
+            [
+                "5d977483eb26c873"
+            ]
+        ]
+    },
+    {
+        "id": "0129663170b665e8",
+        "type": "csv",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "all",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "departure_time, arrival_time",
+        "skip": "10",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 750,
+        "y": 1240,
+        "wires": [
+            [
+                "7f8399c4819b1f46",
+                "2acf98c5eb4bdf0b",
+                "e26650f0cbb5fceb"
+            ]
+        ]
+    },
+    {
+        "id": "4d2619a0fca40e0b",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "32",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://ctpcj.ro/orare/csv/orar_32_lv.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "accept",
+                "valueType": "other",
+                "valueValue": "*/*"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "accept-language",
+                "valueType": "other",
+                "valueValue": "en-US,en;q=0.9,ro;q=0.8"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "cookie",
+                "valueType": "other",
+                "valueValue": "_ga=GA1.1.1619507373.1733415403; _ga_V4YDWT84EJ=GS1.1.1733415402.1.1.1733415413.0.0.0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "priority",
+                "valueType": "other",
+                "valueValue": "u=1, i"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "referer",
+                "valueType": "other",
+                "valueValue": "https://ctpcj.ro/index.php/ro/orare-linii/linii-urbane/linia-32"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua",
+                "valueType": "other",
+                "valueValue": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-mobile",
+                "valueType": "other",
+                "valueValue": "?0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-platform",
+                "valueType": "other",
+                "valueValue": "\"Windows\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-dest",
+                "valueType": "other",
+                "valueValue": "empty"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-mode",
+                "valueType": "other",
+                "valueValue": "cors"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-site",
+                "valueType": "other",
+                "valueValue": "same-origin"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "user-agent",
+                "valueType": "other",
+                "valueValue": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "x-requested-with",
+                "valueType": "other",
+                "valueValue": "XMLHttpRequest"
+            }
+        ],
+        "x": 570,
+        "y": 1320,
+        "wires": [
+            [
+                "65234aa36ae3fdd5"
+            ]
+        ]
+    },
+    {
+        "id": "ca99b9f080369a6a",
+        "type": "inject",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 1320,
+        "wires": [
+            [
+                "4d2619a0fca40e0b"
+            ]
+        ]
+    },
+    {
+        "id": "65234aa36ae3fdd5",
+        "type": "csv",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "all",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "departure_time, arrival_time",
+        "skip": "10",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 750,
+        "y": 1320,
+        "wires": [
+            [
+                "7f8399c4819b1f46",
+                "bc028c8fe6788346",
+                "039c832c0f2aebf4"
+            ]
+        ]
+    },
+    {
+        "id": "3fc193e98c17189f",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "46",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://ctpcj.ro/orare/csv/orar_47_lv.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "accept",
+                "valueType": "other",
+                "valueValue": "*/*"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "accept-language",
+                "valueType": "other",
+                "valueValue": "en-US,en;q=0.9,ro;q=0.8"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "cookie",
+                "valueType": "other",
+                "valueValue": "_ga=GA1.1.1619507373.1733415403; _ga_V4YDWT84EJ=GS1.1.1733415402.1.1.1733415413.0.0.0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "priority",
+                "valueType": "other",
+                "valueValue": "u=1, i"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "referer",
+                "valueType": "other",
+                "valueValue": "https://ctpcj.ro/index.php/ro/orare-linii/linii-urbane/linia-47"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua",
+                "valueType": "other",
+                "valueValue": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-mobile",
+                "valueType": "other",
+                "valueValue": "?0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-platform",
+                "valueType": "other",
+                "valueValue": "\"Windows\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-dest",
+                "valueType": "other",
+                "valueValue": "empty"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-mode",
+                "valueType": "other",
+                "valueValue": "cors"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-site",
+                "valueType": "other",
+                "valueValue": "same-origin"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "user-agent",
+                "valueType": "other",
+                "valueValue": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "x-requested-with",
+                "valueType": "other",
+                "valueValue": "XMLHttpRequest"
+            }
+        ],
+        "x": 570,
+        "y": 1400,
+        "wires": [
+            [
+                "73165e26d9330d19"
+            ]
+        ]
+    },
+    {
+        "id": "e33a6908670d4439",
+        "type": "inject",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 1400,
+        "wires": [
+            [
+                "3fc193e98c17189f"
+            ]
+        ]
+    },
+    {
+        "id": "73165e26d9330d19",
+        "type": "csv",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "all",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "departure_time, arrival_time",
+        "skip": "10",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 750,
+        "y": 1400,
+        "wires": [
+            [
+                "7f8399c4819b1f46",
+                "6f49b40f7268c7a9",
+                "204a48ec70e607b1"
+            ]
+        ]
+    },
+    {
+        "id": "b0f5074d4451d760",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "25",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://ctpcj.ro/orare/csv/orar_25_lv.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "accept",
+                "valueType": "other",
+                "valueValue": "*/*"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "accept-language",
+                "valueType": "other",
+                "valueValue": "en-US,en;q=0.9,ro;q=0.8"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "cookie",
+                "valueType": "other",
+                "valueValue": "_ga=GA1.1.1619507373.1733415403; _ga_V4YDWT84EJ=GS1.1.1733415402.1.1.1733415413.0.0.0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "priority",
+                "valueType": "other",
+                "valueValue": "u=1, i"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "referer",
+                "valueType": "other",
+                "valueValue": "https://ctpcj.ro/index.php/ro/orare-linii/linii-urbane/linia-25"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua",
+                "valueType": "other",
+                "valueValue": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-mobile",
+                "valueType": "other",
+                "valueValue": "?0"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-ch-ua-platform",
+                "valueType": "other",
+                "valueValue": "\"Windows\""
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-dest",
+                "valueType": "other",
+                "valueValue": "empty"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-mode",
+                "valueType": "other",
+                "valueValue": "cors"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "sec-fetch-site",
+                "valueType": "other",
+                "valueValue": "same-origin"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "user-agent",
+                "valueType": "other",
+                "valueValue": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "x-requested-with",
+                "valueType": "other",
+                "valueValue": "XMLHttpRequest"
+            }
+        ],
+        "x": 570,
+        "y": 1480,
+        "wires": [
+            [
+                "9cb84094b95f8c2a"
+            ]
+        ]
+    },
+    {
+        "id": "7e97114d01843072",
+        "type": "inject",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 1480,
+        "wires": [
+            [
+                "b0f5074d4451d760"
+            ]
+        ]
+    },
+    {
+        "id": "9cb84094b95f8c2a",
+        "type": "csv",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "all",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "departure_time, arrival_time",
+        "skip": "10",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 750,
+        "y": 1480,
+        "wires": [
+            [
+                "7f8399c4819b1f46",
+                "39484529badbbabe",
+                "08b042727b984757"
+            ]
+        ]
+    },
+    {
+        "id": "7f8399c4819b1f46",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 25",
+        "func": "const now = new Date(); // Current time\nlet departures = msg.payload; // Assuming msg.payload is your array\nlet messageSent = false;\n\nif (!Array.isArray(departures)) {\n    throw new Error(\"departures is not a valid array\");\n}\n\n// Filter out invalid entries (departure_time or arrival_time)\ndepartures = departures.filter(item => {\n    const time = item.departure_time || item.arrival_time;\n\n    if (!time) {\n        node.warn(`Skipping entry with missing time: ${JSON.stringify(item)}`);\n        return false;\n    }\n\n    const timeRegex = /^\\d{2}:\\d{2}$/;\n    if (!timeRegex.test(time)) {\n        node.warn(`Invalid time format for entry: ${JSON.stringify(item)}, time: ${time}`);\n        return false;\n    }\n\n    return true;\n});\n\nfor (let i = 0; i < departures.length; i++) {\n    const departure = departures[i].departure_time || departures[i].arrival_time;\n\n    // Parse the time\n    const [depHour, depMinute] = departure.split(':').map(Number);\n    const depTime = new Date();\n    depTime.setHours(depHour, depMinute, 0, 0); // Set hours, minutes, seconds, milliseconds\n\n    // Calculate the difference in minutes\n    const diffInMinutes = Math.floor((depTime.getTime() - now.getTime()) / (1000 * 60));\n\n    if (diffInMinutes === 10) {\n        // Send only the body text\n        msg.payload = `Reminder: Your ${departures[i].departure_time ? 'departure' : 'arrival'} is at ${departure}`;\n        messageSent = true;\n        break; // Exit loop after finding the match\n    }\n}\n\nif (!messageSent) {\n    return null; // No message if no match\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1400,
+        "wires": [
+            [
+                "7ebe4a1682aec4a7"
+            ]
+        ]
+    },
+    {
+        "id": "53fdd27b35f3b3b2",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "Vechicles",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.tranzy.ai/v1/opendata/vehicles",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Accept",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "OZs32pMqbhukb0iziTSe9LnxvotNaX48G5IwmLCq"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-Agency-Id",
+                "valueType": "other",
+                "valueValue": "2"
+            }
+        ],
+        "x": 1600,
+        "y": 860,
+        "wires": [
+            [
+                "5944891c31acf86d"
+            ]
+        ]
+    },
+    {
+        "id": "5944891c31acf86d",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 26",
+        "func": "// Parse the payload if it is a string\nif (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields\n    let filteredData = msg.payload\n        .filter(item => item.latitude && item.longitude && item.route_id) // Remove invalid entries\n        .map(item => ({\n            route_id: item.route_id,         // Bus number\n            latitude: item.latitude,        // Latitude\n            longitude: item.longitude       // Longitude\n        }));\n    \n    // Assign the route_id of the first valid item (or dynamically handle all items)\n    if (filteredData.length > 0) {\n        msg.route_id = filteredData[0].route_id; // Assign route_id to the message\n    } else {\n        msg.route_id = undefined; // Handle cases where no valid data exists\n    }\n\n    // Assign the filtered data as the new payload\n    msg.payload = filteredData;\n    msg.parts = {\n    id: \"unique_group_id\", // Use the same ID for all related messages\n    index: flow.get(\"message_index\") || 0, // Use a unique index for each message\n    count: 2 // Total number of messages expected in the group\n};\nflow.set(\"message_index\", (flow.get(\"message_index\") || 0) + 1);\n\nreturn msg;\n\n    // Create a single-line debug message\n    let debugMessage = filteredData\n        .map(item => `Route id: ${item.route_id}\\n Latitude: ${item.latitude}\\n Longitude: ${item.longitude}\\n\\n`)\n        .join(\" \"); // Use a semicolon as a separator for better readability\n\n    // Log the filtered data\n    node.warn(`Filtered Data:\\n ${debugMessage}`);\n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 860,
+        "wires": [
+            [
+                "c7cda74d86dae536"
+            ]
+        ]
+    },
+    {
+        "id": "799074073319751f",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "stops",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.tranzy.ai/v1/opendata/stops",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Accept",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "OZs32pMqbhukb0iziTSe9LnxvotNaX48G5IwmLCq"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-Agency-Id",
+                "valueType": "other",
+                "valueValue": "2"
+            }
+        ],
+        "x": 1610,
+        "y": 1040,
+        "wires": [
+            [
+                "fb7bd2b3cafe7f62",
+                "77e92f8ab2644197",
+                "e24e8aea99f91c68"
+            ]
+        ]
+    },
+    {
+        "id": "7a4b27e008269ebe",
+        "type": "http request",
+        "z": "87cf86ceec82f61d",
+        "name": "Routes",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.tranzy.ai/v1/opendata/routes",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Accept",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "OZs32pMqbhukb0iziTSe9LnxvotNaX48G5IwmLCq"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-Agency-Id",
+                "valueType": "other",
+                "valueValue": "2"
+            }
+        ],
+        "x": 1600,
+        "y": 940,
+        "wires": [
+            [
+                "01205378a9432572"
+            ]
+        ]
+    },
+    {
+        "id": "01205378a9432572",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 27",
+        "func": "// Parse the payload if it is a string\nif (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields\n    let filteredData = msg.payload\n        .filter(item => item.route_short_name && item.route_id) // Remove invalid entries\n        .map(item => ({\n            route_short_name: item.route_short_name, // Bus number\n            route_id: item.route_id                 // Route ID\n        }));\n    \n    // Assign the route_id of the first valid item (or dynamically handle all items)\n    if (filteredData.length > 0) {\n        msg.route_id = filteredData[0].route_id; // Assign route_id to the message\n    } else {\n        msg.route_id = undefined; // Handle cases where no valid data exists\n    }\n\n    // Assign the filtered data as the new payload\n    msg.payload = filteredData;\n    msg.parts = {\n    id: \"unique_group_id\", // Use the same ID for all related messages\n    index: flow.get(\"message_index\") || 0, // Use a unique index for each message\n    count: 2 // Total number of messages expected in the group\n};\nflow.set(\"message_index\", (flow.get(\"message_index\") || 0) + 1);\n\nreturn msg;\n\n    // Create a single-line debug message\n    let debugMessage = filteredData\n        .map(item => `Bus Number: ${item.route_short_name}\\nRoute ID: ${item.route_id}\\n\\n`)\n        .join(\"\"); // Join the debug messages\n\n    // Log the filtered data\n    node.warn(`Filtered Data:\\n${debugMessage}`);\n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 940,
+        "wires": [
+            [
+                "c7cda74d86dae536"
+            ]
+        ]
+    },
+    {
+        "id": "fb7bd2b3cafe7f62",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 28",
+        "func": "if (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Function to calculate distance between two coordinates (Haversine formula)\nfunction calculateDistance(lat1, lon1, lat2, lon2) {\n    const R = 6371; // Earth's radius in kilometers\n    const dLat = (lat2 - lat1) * Math.PI / 180;\n    const dLon = (lon2 - lon1) * Math.PI / 180;\n    const a =\n        Math.sin(dLat / 2) * Math.sin(dLat / 2) +\n        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *\n        Math.sin(dLon / 2) * Math.sin(dLon / 2);\n    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n    return R * c; // Distance in kilometers\n}\n\n// Coordinates for the center point\nconst centerLat = 46.770439;\nconst centerLon = 23.591423;\nconst radius = 2; // Radius in kilometers\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields and filter by distance\n    let filteredData = msg.payload\n        .filter(item => item.stop_name && item.stop_lat && item.stop_lon) // Remove invalid entries\n        .filter(item => {\n            // Calculate distance to the center point\n            const distance = calculateDistance(centerLat, centerLon, item.stop_lat, item.stop_lon);\n            return distance <= radius; // Keep only stations within the radius\n        })\n        .map(item => ({\n            name: item.stop_name,\n            lat: item.stop_lat,\n            lon: item.stop_lon,\n            iconColor: \"blue\",\n            popup: \"Welcome to luj-Napoca!\"\n        }));\n\n    msg.payload = JSON.stringify(filteredData, null, 2);\n    // Create a single-line debug message\n    let debugMessage = filteredData\n        .map(item => `name: ${item.name}\\nlat: ${item.lat}\\nlon: ${item.lon}\\n\\n`)\n        .join(\" \"); // Use a space as a separator for better readability\n\n\n    // Log the filtered data\n    node.warn(`Filtered Data:\\n\\n${debugMessage}`);\n\n\n    // Set the filtered data as the new payload\n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1830,
+        "y": 1040,
+        "wires": [
+            [
+                "43625168e964d0ce"
+            ]
+        ]
+    },
+    {
+        "id": "43625168e964d0ce",
+        "type": "json",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 2030,
+        "y": 1040,
+        "wires": [
+            [
+                "ae4a6922f282b6c5"
+            ]
+        ]
+    },
+    {
+        "id": "c7cda74d86dae536",
+        "type": "join",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "route_id",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2050,
+        "y": 900,
+        "wires": [
+            [
+                "6bad43619bd72daa"
+            ]
+        ]
+    },
+    {
+        "id": "ae4a6922f282b6c5",
+        "type": "join",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "route_id",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2450,
+        "y": 960,
+        "wires": [
+            [
+                "7e5853a3c00f88b9"
+            ]
+        ]
+    },
+    {
+        "id": "16fcc338e8ddfd4e",
+        "type": "inject",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.4",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1310,
+        "y": 940,
+        "wires": [
+            [
+                "799074073319751f",
+                "7a4b27e008269ebe",
+                "53fdd27b35f3b3b2",
+                "12e07d88b7b2b9f3"
+            ]
+        ]
+    },
+    {
+        "id": "6bad43619bd72daa",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 29",
+        "func": "// Flatten the structure if msg.payload is an object\nif (typeof msg.payload === \"object\" && !Array.isArray(msg.payload)) {\n    let flattenedData = [];\n    for (let key in msg.payload) {\n        if (Array.isArray(msg.payload[key])) {\n            flattenedData = flattenedData.concat(msg.payload[key]);\n        }\n    }\n    msg.payload = flattenedData; // Replace payload with flattened data\n}\n\n// Ensure msg.payload is an array\nif (!Array.isArray(msg.payload)) {\n    node.error(\"Payload is not an array even after flattening: \" + JSON.stringify(msg.payload, null, 2));\n    return null;\n}\n\n// Group the data by route_id\nlet groupedData = {};\nmsg.payload.forEach(item => {\n    if (!item.route_id) {\n        node.warn(\"Item missing route_id: \" + JSON.stringify(item));\n        return;\n    }\n\n    if (!groupedData[item.route_id]) {\n        groupedData[item.route_id] = {};\n    }\n\n    groupedData[item.route_id] = { ...groupedData[item.route_id], ...item };\n});\n\n// Prepare map data based on grouped data\nlet mapData = [];\nObject.keys(groupedData).forEach(route_id => {\n    let item = groupedData[route_id];\n\n    // // Ensure the required properties are present\n    // if (!item.latitude || !item.longitude) {\n    //     node.warn(`Grouped item for route_id \"${route_id}\" is missing latitude or longitude.`);\n    //     return;\n    // }\n\n    // Add the map entry\n    mapData.push({\n        name: item.route_id, // Use route_id as name\n        lat: parseFloat(item.latitude), // Ensure latitude is a number\n        lon: parseFloat(item.longitude), // Ensure longitude is a number\n        icon: \"bus\", // Use a suitable icon\n        layer: \"buses\", // Optional: group under a layer\n        label: item.route_short_name || item.route_id, // Use route_short_name if available, fallback to route_id\n    });\n});\n\n// Set the new payload for the map\nmsg.payload = mapData;\n\nnode.warn(\"Map Data: \" + JSON.stringify(mapData, null, 2));\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2190,
+        "y": 900,
+        "wires": [
+            [
+                "ae4a6922f282b6c5"
+            ]
+        ]
+    },
+    {
+        "id": "7e5853a3c00f88b9",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 30",
+        "func": "// Check if msg.payload is an array containing other arrays\nif (!Array.isArray(msg.payload)) {\n    node.error(\"Payload is not an array of arrays: \" + JSON.stringify(msg.payload, null, 2));\n    return null;\n}\n\n// Flatten the array of arrays into a single array\nlet combinedData = msg.payload.flat();\n\n// Set the combined data as the new payload\nmsg.payload = combinedData;\n\n// Log the combined data for debugging\nnode.warn(\"Combined Data: \" + JSON.stringify(combinedData, null, 2));\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2630,
+        "y": 960,
+        "wires": [
+            [
+                "8a275b64cc9d9932"
+            ]
+        ]
+    },
+    {
+        "id": "77e92f8ab2644197",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 31",
+        "func": "if (typeof msg.payload === \"string\") {\n    try {\n        msg.payload = JSON.parse(msg.payload);\n    } catch (err) {\n        // Log error if JSON parsing fails\n        node.error(\"Failed to parse JSON: \" + err.message, msg);\n        return null; // Exit the function if parsing fails\n    }\n}\n\n// Check if the payload is now an array\nif (Array.isArray(msg.payload)) {\n    // Filter and map the data to extract the required fields\n    let filteredData = msg.payload\n        .filter(item => item.stop_name && item.stop_lat && item.stop_lon) // Remove invalid entries\n        .map(item => ({\n            name: item.stop_name,         \n            lat: item.stop_lat,   \n            lon: item.stop_lon,\n            iconColor: \"blue\",\n            popup: \"Welcome to Cluj-Napoca!\"\n}));\n    msg.payload = JSON.stringify(filteredData, null, 2);\n    // Create a single-line debug message\n    let debugMessage = filteredData\n        .map(item => 'name: ${item.stop_name}\\n lat: ${item.stop_lat}\\n lon: ${item.stop_lon}\\n\\n')\n        .join(\" \"); // Use a semicolon as a separator for better readability\n\n    // Force output as a plain string\n    node.warn('Filtered Data:\\n\\n ${debugMessage}');\n\n    // Set the filtered data as the new payload\n   // msg.payload = filteredData;\n} else {\n    // If the payload isn't an array, set an error message\n    msg.payload = { error: \"Unexpected data format\" };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1830,
+        "y": 1120,
+        "wires": [
+            [
+                "a55a143721ea088a"
+            ]
+        ]
+    },
+    {
+        "id": "a55a143721ea088a",
+        "type": "file",
+        "z": "87cf86ceec82f61d",
+        "name": "file4",
+        "filename": "C:\\Users\\raluc\\Downloads\\IoT_project/Stops.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 2030,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "12e07d88b7b2b9f3",
+        "type": "ui_template",
+        "z": "87cf86ceec82f61d",
+        "group": "ce0f61c7fd222874",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n  <h3>Fetching Location...</h3>\n</div>\n<script>\n  (function(scope) {\n    // Function to fetch and send the location\n    function sendLocationOnce() {\n      if (navigator.geolocation) {\n        console.log(\"Geolocation is supported. Fetching location...\");\n        \n        // Fetch location once\n        navigator.geolocation.getCurrentPosition(\n          (position) => {\n            const latitude = position.coords.latitude;\n            const longitude = position.coords.longitude;\n\n            // Display location on the dashboard\n            document.querySelector(\"h3\").innerText =\n              \"Latitude: \" + latitude + \", Longitude: \" + longitude;\n\n            console.log(\"Location fetched:\", latitude, longitude);\n\n            // Send data back to Node-RED only once\n            scope.send({\n              payload: {\n                latitude: latitude,\n                longitude: longitude,\n              },\n            });\n\n            console.log(\"Data sent to Node-RED\");\n          },\n          (error) => {\n            // Handle geolocation errors\n            document.querySelector(\"h3\").innerText =\n              \"Error fetching location: \" + error.message;\n            console.error(\"Geolocation error:\", error);\n          }\n        );\n      } else {\n        // Handle case where geolocation is not supported\n        document.querySelector(\"h3\").innerText =\n          \"Geolocation is not supported by this browser.\";\n        console.error(\"Geolocation not supported by the browser.\");\n      }\n    }\n\n    // Call the function immediately to send location once\n    sendLocationOnce();\n    \n    \n\n\n    // Optional: Handle messages from Node-RED (if needed)\n    scope.$watch(\"msg\", (msg) => {\n      console.log(\"Message from Node-RED:\", msg);\n    });\n  })(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1600,
+        "y": 780,
+        "wires": [
+            [
+                "04d1b5fe3ae8881b"
+            ]
+        ]
+    },
+    {
+        "id": "d508cbafbae866ca",
+        "type": "delay",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1840,
+        "y": 700,
+        "wires": [
+            [
+                "bc9d942ef0f7ddfa"
+            ]
+        ]
+    },
+    {
+        "id": "7ebe4a1682aec4a7",
+        "type": "twilio out",
+        "z": "87cf86ceec82f61d",
+        "twilio": "bc475ea6923beaf0",
+        "twilioType": "sms",
+        "url": "",
+        "number": "",
+        "name": "SMS",
+        "x": 1230,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "bc9d942ef0f7ddfa",
+        "type": "debug",
+        "z": "87cf86ceec82f61d",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2000,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "04d1b5fe3ae8881b",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 32",
+        "func": "var latitude = msg.payload.latitude;\nvar longitude = msg.payload.longitude;\n\n// Create the marker object with the correct latitude and longitude for worldmap node\nmsg.payload = {\n    lat: latitude,\n    lon: longitude,\n    msg: \"You are here!\",  // Optional: message to display when the marker is clicked\n    name: \"Location\",      // Optional: Name for the marker\n    icon: \"fa-map-marker\",  // Optional: You can change the icon if needed\n    label: \"You\",\n   \n\n};\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2130,
+        "y": 760,
+        "wires": [
+            [
+                "22988cb3fd1c6c3d",
+                "b33b6a445969f166"
+            ]
+        ]
+    },
+    {
+        "id": "8a275b64cc9d9932",
+        "type": "ui_worldmap",
+        "z": "87cf86ceec82f61d",
+        "group": "ce0f61c7fd222874",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "map",
+        "lat": "46.770439",
+        "lon": "23.591423",
+        "zoom": "16",
+        "layer": "OSMC",
+        "cluster": "",
+        "maxage": "1000",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "true",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "true",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 2810,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "3b1b45f49890e43b",
+        "type": "azureiothub-ot",
+        "z": "87cf86ceec82f61d",
+        "name": "Azure IoT Hub",
+        "protocol": "mqtt",
+        "x": 1120,
+        "y": 1160,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2acf98c5eb4bdf0b",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 33",
+        "func": "let filteredData= msg.payload\n    msg.payload = {\n        \"deviceId\": \"Traffic_mob\",\n        \"key\": \"26dZAO+EeINMGBGh80ZyNGE8Fn4YRLsLrR5vyID/s3U=\",\n        \"protocol\": \"mqtt\",\n        \"data\": filteredData,\n    }\n    return msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "07821e942740f415",
+        "type": "azureiothub-ot",
+        "z": "87cf86ceec82f61d",
+        "name": "Azure IoT Hub",
+        "protocol": "mqtt",
+        "x": 1140,
+        "y": 1200,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bc028c8fe6788346",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 34",
+        "func": "let filteredData= msg.payload\n    msg.payload = {\n        \"deviceId\": \"Traffic_mob\",\n        \"key\": \"26dZAO+EeINMGBGh80ZyNGE8Fn4YRLsLrR5vyID/s3U=\",\n        \"protocol\": \"mqtt\",\n        \"data\": filteredData,\n    }\n    return msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4b3b837e4f87713",
+        "type": "azureiothub-ot",
+        "z": "87cf86ceec82f61d",
+        "name": "Azure IoT Hub",
+        "protocol": "mqtt",
+        "x": 1200,
+        "y": 1560,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6f49b40f7268c7a9",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 36",
+        "func": "let filteredData= msg.payload\n    msg.payload = {\n        \"deviceId\": \"Traffic_mob\",\n        \"key\": \"26dZAO+EeINMGBGh80ZyNGE8Fn4YRLsLrR5vyID/s3U=\",\n        \"protocol\": \"mqtt\",\n        \"data\": filteredData,\n    }\n    return msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3b60f5fa5c13774",
+        "type": "azureiothub-ot",
+        "z": "87cf86ceec82f61d",
+        "name": "Azure IoT Hub",
+        "protocol": "mqtt",
+        "x": 1160,
+        "y": 1600,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "39484529badbbabe",
+        "type": "function",
+        "z": "87cf86ceec82f61d",
+        "name": "function 37",
+        "func": "let filteredData= msg.payload\n    msg.payload = {\n        \"deviceId\": \"Traffic_mob\",\n        \"key\": \"26dZAO+EeINMGBGh80ZyNGE8Fn4YRLsLrR5vyID/s3U=\",\n        \"protocol\": \"mqtt\",\n        \"data\": filteredData,\n    }\n    return msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e26650f0cbb5fceb",
+        "type": "file",
+        "z": "87cf86ceec82f61d",
+        "name": "file4",
+        "filename": "C:\\Users\\raluc\\Downloads\\IoT_project/45orar.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 950,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "039c832c0f2aebf4",
+        "type": "file",
+        "z": "87cf86ceec82f61d",
+        "name": "file4",
+        "filename": "C:\\Users\\raluc\\Downloads\\IoT_project/32orar.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 990,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08b042727b984757",
+        "type": "file",
+        "z": "87cf86ceec82f61d",
+        "name": "file4",
+        "filename": "C:\\Users\\raluc\\Downloads\\IoT_project/25orar.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1010,
+        "y": 1520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "204a48ec70e607b1",
+        "type": "file",
+        "z": "87cf86ceec82f61d",
+        "name": "file4",
+        "filename": "C:\\Users\\raluc\\Downloads\\IoT_project/46orar.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1030,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75bcdb3c8ff3ea15",
+        "type": "file",
+        "z": "87cf86ceec82f61d",
+        "name": "file1",
+        "filename": "C:\\Users\\raluc\\Downloads\\IoT_project/vehicles.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 810,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b33b6a445969f166",
+        "type": "delay",
+        "z": "87cf86ceec82f61d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2360,
+        "y": 820,
+        "wires": [
+            [
+                "ae4a6922f282b6c5"
+            ]
+        ]
+    },
+    {
+        "id": "8306ce9f497f831c",
+        "type": "azureiothub-ot",
+        "z": "87cf86ceec82f61d",
+        "name": "Azure IoT Hub",
+        "protocol": "mqtt",
+        "x": 780,
+        "y": 340,
+        "wires": [
+            [],
+            []
+        ]
+    }
+]
